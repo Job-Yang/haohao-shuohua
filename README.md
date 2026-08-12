@@ -8,13 +8,42 @@
 
 ## 安装
 
-这是一个标准的 Agent Skill（含 `SKILL.md` 与 `references/`）。把整个目录放进你 Agent 宿主的 skills 目录即可：
+这是一个标准的 Agent Skill（含 `SKILL.md` 与 `references/`），有三种安装方式。
+
+### 方法一：通过 npx 一键安装（推荐）
 
 ```bash
-git clone https://github.com/Job-Yang/haohao-shuohua.git
-# 然后把 haohao-shuohua/ 整个目录放到你所用宿主的 skills 目录下
-# 例如 Claude Code:  ~/.claude/skills/haohao-shuohua/
+npx skills add https://github.com/Job-Yang/haohao-shuohua.git
 ```
+
+安装器会识别本机支持的 Agent，并让你选择安装位置。需要安装到用户级目录时，加 `--global`：
+
+```bash
+npx skills add https://github.com/Job-Yang/haohao-shuohua.git --global
+```
+
+### 方法二：通过 Git 克隆
+
+以 Claude Code 为例，直接克隆到用户级 skills 目录：
+
+```bash
+git clone https://github.com/Job-Yang/haohao-shuohua.git ~/.claude/skills/haohao-shuohua
+```
+
+其他 Agent 请改成对应的 skills 目录。
+
+### 方法三：手动安装
+
+1. 在 GitHub 下载本仓库的 ZIP 文件并解压。
+2. 将整个 `haohao-shuohua` 文件夹复制到 Agent 的 skills 目录。
+3. 重启 Agent 或重新加载 skills。
+
+Claude Code 的默认目录：
+
+- macOS / Linux：`~/.claude/skills/`
+- Windows：`%USERPROFILE%\.claude\skills\`
+
+安装后应保留完整目录结构，不能只复制 `SKILL.md`，因为技能会读取 `references/` 下的规则文件。
 
 装好后，直接对 Agent 说这类话就会触发：
 
