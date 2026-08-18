@@ -1,32 +1,35 @@
 # Job Yang AI Skills
 
-AI Agent Skills by Yangquan.
+AI Agent Skills by Job Yang.
 
-This repository is my personal Skill index. It collects the Agent Skills I use and maintain for writing, video understanding, VDD workflows, and other reusable work patterns.
+This is a long-term Skill repository: a place to turn repeated judgment, workflow, scripts, and boundaries from real work into reusable Agent Skills.
+
+In the AI era, the most valuable things are not always one-off answers. They are the working patterns that survive repetition. A writing decision, a way to inspect a video, a habit of separating observation from guesswork: if they stay inside one chat, they disappear quickly. A Skill turns that experience into something installable, callable, and open to further refinement.
+
+This repository is not a prompt cheat sheet. Each Skill should be a compact piece of practice: it knows when to trigger, what material to inspect, where its limits are, and when it should stop and let a human decide.
 
 [简体中文](./README.md)
 
 ## Skills
 
-| Skill | What it does | Status |
-| --- | --- | --- |
-| [haohao-shuohua](./skills/haohao-shuohua/) | Cleans Chinese writing so it sounds like a person wrote it: keeps facts, removes AI flavor, restores Chinese rhythm, and blocks fake profundity. | Active |
-| [video-reader](./skills/video-reader/) | Turns video into timestamped keyframes and a motion timeline, so an image-only LLM can reason about what happened at which second. | Active |
-| VDD Skill | Evidence-first development workflow: plan, observe, change, verify, and close the loop with reproducible proof. | In progress |
+| Skill | What it does |
+| --- | --- |
+| [haohao-shuohua](./skills/haohao-shuohua/) | Cleans Chinese writing so it sounds like a person wrote it: keeps facts, removes AI flavor, restores Chinese rhythm, and blocks fake profundity. |
+| [video-reader](./skills/video-reader/) | Turns video into timestamped keyframes and a motion timeline, so an image-only LLM can reason about what happened at which second. |
 
 ## Why This Repo Exists
 
-Most prompt repositories stop at "how to talk to the model." That is not enough.
+Many AI capabilities look like one-off conversational tricks. Underneath them, there is often a structure worth preserving.
 
-I care more about whether an Agent Skill can become a stable working habit: whether it works in real tasks, reduces mistakes, and keeps conclusions grounded in evidence.
+Writing is not just "polish this." It is a set of decisions about facts, tone, rhythm, and editing boundaries. Reading a video is not just "look at this clip." It is a way to break motion into keyframes, timelines, and inspectable observations. When patterns like these repeat, they should leave the chat and become standalone Skills.
 
-The Skills in this repository follow a few rules:
+The Skills in this repository should follow a few rules:
 
-- One Skill should solve one clear problem.
-- Trigger conditions, boundaries, and outputs should be explicit.
-- Scripts and references are allowed when pure prompting is not enough.
-- Documentation should be readable by humans, not only by agents.
-- VDD-style Skills must distinguish observation from inference.
+- **Concrete**: solve a real problem, not a vague promise to improve productivity.
+- **Bounded**: know what it should do, and what it must not decide for the user.
+- **Reusable**: be more than a spark of inspiration; it should work again next time.
+- **Tool-friendly**: if text rules are not enough, include scripts, references, and workflow.
+- **Compounding**: new experience should make the Skill thicker over time.
 
 ## Install
 
