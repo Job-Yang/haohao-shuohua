@@ -13,23 +13,13 @@
 ### 方法一：通过 Git 克隆（推荐）
 
 ```bash
-git clone https://github.com/Job-Yang/ai-skills.git
-cp -R ai-skills/skills/haohao-shuohua ~/.claude/skills/haohao-shuohua
+git clone https://github.com/Job-Yang/jobbyang-ai-skills.git
+cp -R jobbyang-ai-skills/skills/haohao-shuohua ~/.claude/skills/haohao-shuohua
 ```
 
 其他 Agent 请改成对应的 skills 目录。
 
-### 方法二：旧地址兼容安装
-
-`haohao-shuohua` 原仓库已经升级为 `Job-Yang/ai-skills` 技能总仓。旧地址会跳转到新仓，根目录也保留了兼容 `SKILL.md`：
-
-```bash
-git clone https://github.com/Job-Yang/haohao-shuohua.git ~/.claude/skills/haohao-shuohua
-```
-
-如果你的安装器支持仓库子目录安装，优先安装 `skills/haohao-shuohua/` 这个目录。
-
-### 方法三：手动安装
+### 方法二：手动安装
 
 1. 在 GitHub 下载本仓库的 ZIP 文件并解压。
 2. 将 `skills/haohao-shuohua` 文件夹复制到 Agent 的 skills 目录。

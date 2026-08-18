@@ -1,62 +1,57 @@
 # Job Yang AI Skills
 
-Practical agent Skills by Yangquan, built around one rule: an AI assistant should not only generate an answer, it should leave evidence that the answer stands.
+杨权的 AI Agent Skills 技能表。
 
-This repository is my public Skill index. It collects the Skills I use for writing, reading media, debugging, and VDD-style agent work.
+这里收的是我自己长期使用、持续维护的 Agent 技能：中文写作、视频理解、VDD 工作流，以及后续更多能在真实任务里复用的能力。
 
-## Skills
+[English](./README.en.md)
 
-| Skill | What it does | Status |
+## 技能列表
+
+| Skill | 用来做什么 | 状态 |
 | --- | --- | --- |
-| [haohao-shuohua](./skills/haohao-shuohua/) | Cleans Chinese writing so it sounds like a person wrote it: keeps facts, removes AI flavor, restores Chinese rhythm, and blocks fake profundity. | Active |
-| [video-reader](./skills/video-reader/) | Turns video into timestamped keyframes and a motion timeline, so an image-only LLM can reason about what happened at which second. | Active |
-| VDD Skill | Evidence-first development workflow: plan, observe, change, verify, and close the loop with reproducible proof. | In progress |
+| [haohao-shuohua](./skills/haohao-shuohua/) | 把中文写得更像人说的：保事实、去 AI 味、加中文味、不许造词充深刻。 | Active |
+| [video-reader](./skills/video-reader/) | 把视频转成带时间戳的关键帧和运动时间线，让只能看图的大模型也能判断第几秒发生了什么。 | Active |
+| VDD Skill | 基于证据的开发闭环：计划、观察、改动、验证、收口，每个结论都留下可复核证据。 | In progress |
 
-## Why This Repo Exists
+## 为什么要有这个仓库
 
-Most prompt libraries stop at "say the right thing to the model." That is too weak for real work.
+很多 prompt 仓库只解决“怎么对模型说话”。这不够。
 
-These Skills are meant to be small, installable working habits:
+我更关心的是：一个 Agent Skill 能不能变成稳定的工作习惯，能不能在真实任务里少犯错，能不能把结论建立在证据上。
 
-- Write in Chinese without drifting into translationese.
-- Read a video by turning it into concrete frames and timestamps.
-- Make development decisions with evidence instead of confidence.
-- Keep each Skill narrow enough to be useful, but documented enough to be reused.
+所以这个仓库里的技能会尽量保持几个原则：
 
-## Install
+- 一个 Skill 只解决一个清楚的问题。
+- 触发条件、工作边界、产物形态都写清楚。
+- 纯 prompt 不够时，可以带脚本和参考资料。
+- 文档给人看也要顺，不只给模型解析。
+- VDD 类技能必须区分观察和推断，推断不能冒充证据。
 
-Clone the repository and copy the Skill directory you need into your agent's Skills directory.
+## 安装
+
+克隆仓库后，把需要的技能目录复制到你的 Agent Skills 目录。
 
 ```bash
-git clone https://github.com/Job-Yang/ai-skills.git
-cp -R ai-skills/skills/haohao-shuohua ~/.claude/skills/haohao-shuohua
-cp -R ai-skills/skills/video-reader ~/.claude/skills/video-reader
+git clone https://github.com/Job-Yang/jobbyang-ai-skills.git
+cp -R jobbyang-ai-skills/skills/haohao-shuohua ~/.claude/skills/haohao-shuohua
+cp -R jobbyang-ai-skills/skills/video-reader ~/.claude/skills/video-reader
 ```
 
-Claude Code's default user-level directory is:
+Claude Code 的默认用户级目录：
 
 ```text
 ~/.claude/skills/
 ```
 
-Keep each Skill directory intact. Do not copy only `SKILL.md`, because some Skills read files under `references/`, `scripts/`, or `assets/`.
+安装时要保留完整技能目录，不要只复制 `SKILL.md`。有些技能会读取 `references/`、`scripts/` 或 `assets/`。
 
-### Backward Compatibility
-
-The old `haohao-shuohua` repository has become this Skill index. Existing links to:
-
-```text
-https://github.com/Job-Yang/haohao-shuohua
-```
-
-will redirect here after the GitHub rename. The repository root still contains a compatibility `SKILL.md` for `haohao-shuohua`, so old installs keep working.
-
-## Repository Layout
+## 目录结构
 
 ```text
 .
 ├── README.md
-├── SKILL.md                         # compatibility entry for haohao-shuohua
+├── README.en.md
 └── skills/
     ├── haohao-shuohua/
     │   ├── SKILL.md
@@ -69,14 +64,6 @@ will redirect here after the GitHub rename. The repository root still contains a
         ├── README.zh-CN.md
         └── scripts/
 ```
-
-## Design Rules
-
-- One Skill should do one real job.
-- A Skill should say when to trigger, what evidence to produce, and where its limits are.
-- Scripts are allowed when pure prompting is not enough.
-- Documentation should be readable by humans, not only by agents.
-- VDD-style Skills must distinguish observation from inference.
 
 ## License
 
