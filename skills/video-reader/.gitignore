@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# video-reader debug output
+video_reader_debug/
+
+# macOS
+.DS_Store
